@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "proxypose"
+version = "0.1.0"
+description = "6-DoF object pose estimation via generative proxy video"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+
+dependencies = [
+    "torch>=2.1",
+    "torchvision",
+    "numpy",
+    "opencv-python",
+    "pyyaml",
+    "tqdm",
+    "decord",
+    "safetensors",
+    "diffsynth>=2.0",
+    "scipy",
+    "huggingface_hub",
+    "gradio",
+    # pytorch3d must be installed separately (CUDA-version dependent).
+    # See: https://github.com/facebookresearch/pytorch3d/blob/main/INSTALL.md
+]
+
+[project.scripts]
+proxypose-infer    = "inference.full_inference:main"
+proxypose-annotate = "inference.annotation.annotate_prompt:main"
+proxypose-eval     = "inference.evaluate_all:main"
+proxypose-track    = "inference.track_proxy:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["inference*"]

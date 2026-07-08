@@ -1,0 +1,12 @@
+{
+  "video_path": "/your/path/to/assets/video/baseball_swing.mp4",
+  "frame_index": 0,
+  "groups": {
+    "group_0": [
+      [
+        651,
+        150
+      ]
+    ]
+  }
+}

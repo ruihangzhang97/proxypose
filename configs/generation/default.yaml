@@ -1,0 +1,26 @@
+# ── LoRA checkpoint (auto-downloaded from HuggingFace) ───────────────────────
+lora_repo: ruihangzhang79/proxypose
+lora_filename: final.step.100000.safetensors
+
+# ── Base Wan2.1-T2V-14B model (auto-downloaded from HuggingFace) ─────────────
+# diffsynth downloads into <local_model_path>/<model_id>/
+local_model_path: ~/.cache/proxypose/
+model_id: Wan-AI/Wan2.1-T2V-14B
+
+lora_alpha: 1.0
+
+offload_text_encoder: false
+
+resolution: [512, 512]
+
+num_steps: 50
+
+noise_offset: 500
+
+cfg_scale: 3.0
+
+prompt: "A perfectly geometric cube rotating slowly in place against a pure black background. The center of the cube is rigidly attached to the surface of the object it is tracking. The cube has six different solid-colored faces: red, green, blue, yellow, white, and cyan. Each color is assigned to one face and remains permanently attached to that same face throughout the entire video as the cube rotates. Sharp edges, flat faces, no texture, no gradients, no reflections, no shadows, no extra objects, static camera, high contrast."
+
+proxy_scale: 0.3
+
+default_focal_deg: 45

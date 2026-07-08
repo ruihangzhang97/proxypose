@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Local / cluster-specific files (contain absolute paths to local weights)
+configs/generation/cc_*.yaml
+run_inference_slurm.sh
+setup.sh
+environment.yml
+
+# Gradio runtime files
+.gradio/
+
+# Outputs and experiments
+output/
+logs/
+*.mp4
+!assets/video/*.mp4
+*.pt
+*.safetensors
+*.pth
+
+# Editor / OS
+.DS_Store
+.venv/
+*.swp

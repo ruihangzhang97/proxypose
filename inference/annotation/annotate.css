@@ -1,0 +1,10 @@
+* { box-sizing: border-box; }
+body { background: #1c1c1c; color: #ddd; font-family: system-ui, sans-serif; margin: 0; padding: 16px; }
+h2 { margin: 0 0 10px; color: #fff; }
+#container { position: relative; display: block; max-width: 820px; cursor: crosshair; user-select: none; }
+#frame { display: block; width: 100%; height: auto; }
+#overlay { position: absolute; top: 0; left: 0; pointer-events: none; }
+.btn { padding: 6px 16px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px; background: #333; color: #ddd; }
+#saveBtn { background: #2e7d32; color: #fff; }
+kbd { background: #444; padding: 1px 5px; border-radius: 3px; font-size: 11px; }
+#status { color: #aaa; font-size: 13px; }

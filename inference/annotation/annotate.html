@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ProxyPose — Annotator</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<h2>ProxyPose &mdash; Annotator</h2>
+<div id="container">
+  <img id="frame" src="/frame/0" alt="video frame">
+  <canvas id="overlay"></canvas>
+</div>
+<div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap">
+  <button class="btn" onclick="undo()">&#8617; Undo <kbd>z</kbd></button>
+  <button class="btn" onclick="clearPts()">&times; Clear <kbd>c</kbd></button>
+  <button class="btn" id="saveBtn" onclick="save()">&#128190; Save <kbd>Enter</kbd></button>
+</div>
+<div id="status">Click on the target object in the first frame, then press <b>Save</b>.</div>
+<script src="/annotate.js"></script>
+</body>
+</html>

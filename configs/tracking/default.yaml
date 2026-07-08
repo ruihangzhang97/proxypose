@@ -1,0 +1,3 @@
+use_sub_pix_accuracy: true
+cube_scale: 0.5
+default_focal_deg: 45
