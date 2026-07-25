@@ -43,10 +43,18 @@ pip install -e .
 
 The weights are **downloaded automatically on first run** — no manual steps needed.
 
+We provide two model sizes. The 14B model gives the best quality; the 1.3B model is much
+smaller and faster, useful for quick experiments or lower-VRAM GPUs.
+
 | Weight | HuggingFace | Size |
 |--------|-------------|------|
 | Wan2.1-T2V-14B (base) | [`Wan-AI/Wan2.1-T2V-14B`](https://huggingface.co/Wan-AI/Wan2.1-T2V-14B) | ~30 GB |
-| ProxyPose LoRA | [`ruihangzhang79/proxypose`](https://huggingface.co/ruihangzhang79/proxypose) | ~600 MB |
+| ProxyPose LoRA (14B) | [`ruihangzhang79/proxypose`](https://huggingface.co/ruihangzhang79/proxypose) | ~600 MB |
+| Wan2.1-T2V-1.3B (base) | [`Wan-AI/Wan2.1-T2V-1.3B`](https://huggingface.co/Wan-AI/Wan2.1-T2V-1.3B) | ~7 GB |
+| ProxyPose LoRA (1.3B) | [`ruihangzhang79/proxypose`](https://huggingface.co/ruihangzhang79/proxypose) | ~175 MB |
+
+By default, all commands below use the 14B model (`configs/generation/default.yaml`). To use
+the 1.3B model instead, pass `--gen_config configs/generation/wan1.3b.yaml` to `proxypose-infer`.
 
 
 ### 🖱️ 3. Pick your prompt point
@@ -88,6 +96,9 @@ proxypose-infer \
     --prompt       video/my_video.points.json \
     --depth_anything_path video/my_video.da3.npz   # optional, omit to use fixed 45° FOV
 ```
+
+To use the 1.3B model instead of the default 14B model, add `--gen_config configs/generation/wan1.3b.yaml`.
+
 ---
 
 ## 📖 Citation
