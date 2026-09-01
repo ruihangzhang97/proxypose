@@ -1,0 +1,51 @@
+# Run with:
+#   python blender_datagen_compose.py --config configs/render_orbit_cam.yaml out_dir=output/blender_compose
+#
+# Covers the simple (non-physics) motion modes — override video_mode to try the others:
+#   video_mode=oscil_cam | orbit_lgt | rotat_obj | vtran_obj
+base_path: data/toy_objects/*/
+baseshape_path: data/basicshapes
+num_frames: 8
+resolution: [512, 512]
+spp: 64
+envlight: data/envmaps
+env_scale: 1.0
+use_denoise: OPTIX
+bg_color: [0, 0, 0]
+dump_alpha: true
+dump_envmap: true
+dump_ball_env: true
+dump_env_bg: false
+transparent_bg: true
+num_lighting: 2
+random_env_rotation: true
+random_env_flip: true
+random_env_scale: [0.7, 1.4]
+video_mode: orbit_cam
+num_rendering: 2
+cam_phi_range: [60, 120]
+cam_theta_range: [5, 50]
+cam_t_range: [-0.1, 0.1]
+fov_range: [45, 50]
+radius_range: [2.5, 3.5]
+glbs_per_scene: 2
+glbs_scale_range: [1.0, 1.3]
+glbs_rotation_range: [-45, 45]
+glbs_placement_bbox: [-1.0, -1.0, 1.0, 1.0]
+glbs_rescale: true
+placement_plane: data/plane_basic/plane.glb
+placement_plane_textures: data/textures
+texture_sample_weight: null
+placement_bbox_scale: 1.1
+placement_plane_offset: [0, 0, -0.5]
+placement_plane_scale: 10
+placement_bbox: [-1.5, -1.5, 1.5, 1.5]
+placement_grid_res: [40, 40]
+shapes_per_scene: 3
+shapes_scale_range: [0.3, 0.8]
+shapes_rotation_range: [0, 360]
+shapes_placement_bbox: [-1.5, -1.5, 1.5, 1.5]
+sample_shape_texture: true
+dump_complete: false
+dump_blend: false
+

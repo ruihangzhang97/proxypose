@@ -1,0 +1,58 @@
+# Self-contained dolly-cam video config — run with:
+#   python blender_datagen_compose.py --config configs/render_dolly_cam.yaml
+
+out_dir: output/dolly_cam
+base_path: data/toy_objects/*/
+envlight: data/envmaps
+baseshape_path: data/basicshapes
+
+seed: 359
+num_rendering: 1
+num_frames: 8
+num_lighting: 1
+
+resolution: [512, 512]
+spp: 64
+use_denoise: OPENIMAGEDENOISE
+env_scale: 1.0
+bg_color: [0, 0, 0]
+transparent_bg: false
+
+dump_video: true
+dump_features: true
+dump_alpha: true
+dump_envmap: false
+dump_ball_env: false
+dump_env_bg: false
+dump_complete: false
+dump_blend: false
+
+random_env_rotation: true
+random_env_flip: true
+random_env_scale: [0.7, 1.4]
+
+video_mode: dolly_cam
+cam_phi_range: [60, 120]
+cam_theta_range: [5, 50]
+cam_t_range: [-0.1, 0.1]
+fov_range: [15, 60]
+radius_range: [2.5, 3.5]
+
+glbs_per_scene: 2
+glbs_scale_range: [0.7, 0.9]
+glbs_rotation_range: [-45, 45]
+glbs_placement_bbox: [-1.0, -1.0, 1.0, 1.0]
+glbs_rescale: true
+glbs_check_bbox: true
+
+shapes_per_scene: 0
+sample_shape_texture: false
+
+placement_plane: data/plane_basic/plane.glb
+placement_plane_textures: data/textures
+texture_sample_weight: null
+placement_bbox_scale: 1.1
+placement_plane_offset: [0, 0, -0.5]
+placement_plane_scale: 10
+placement_bbox: [-1.5, -1.5, 1.5, 1.5]
+placement_grid_res: [40, 40]

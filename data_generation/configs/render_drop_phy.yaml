@@ -1,0 +1,98 @@
+# Self-contained drop-physics config — run with:
+#   python blender_datagen_compose.py --config configs/render_drop_phy.yaml
+
+# base_path defaults to the small bundled demo objects so this config runs out of
+# the box. For real generation, point it at your own asset library instead (e.g. a
+# downloaded Objaverse subset) — data/objects/ is an empty placeholder for that.
+out_dir: output/drop_phy
+base_path: data/toy_objects/*/
+envlight: data/envmaps
+placement_plane_textures: data/textures
+
+seed: 211
+num_rendering: 1
+num_frames: 64
+num_lighting: 1
+
+resolution: [512, 512]
+spp: 64
+use_denoise: OPENIMAGEDENOISE
+env_scale: 1.0
+bg_color: [0, 0, 0]
+transparent_bg: false
+
+dump_video: true
+dump_features: true
+dump_alpha: true
+dump_envmap: false
+dump_ball_env: false
+dump_env_bg: false
+dump_complete: false
+dump_blend: false
+
+random_env_rotation: true
+random_env_flip: true
+random_env_scale: [0.7, 1.4]
+
+video_mode: drop_phy
+
+glbs_per_scene: 2
+shapes_per_scene: 0
+glbs_check_bbox: true
+glbs_rescale: true
+glbs_scale_range: [0.6, 0.8]
+glbs_rotation_range: [-45, 45]
+glbs_placement_bbox: [-1.0, -1.0, 1.0, 1.0]
+
+cam_phi_range: [60, 120]
+cam_theta_range: [5, 50]
+cam_t_range: [0, 0]
+fov_range: [45, 45]
+radius_range: [3.0, 3.5]
+
+placement_plane: data/plane_basic/plane.glb
+texture_sample_weight: null
+placement_bbox_scale: 1.1
+placement_plane_offset: [0, 0, -0.5]
+placement_plane_scale: 10
+placement_bbox: [-1.5, -1.5, 1.5, 1.5]
+placement_grid_res: [40, 40]
+sample_shape_texture: false
+
+camera_motion:
+  max_azimuth_drift: 0
+  max_elevation_drift: 0
+  max_radius_drift: 0
+
+spawn:
+  region:
+    center: [0.0, 0.0, 1.5]
+    size: [1.0, 1.0, 0.6]
+  min_separation: 0.06
+  retries: 50
+
+initial_motion:
+  speed_range: [0.0, 3.0]
+  downward_bias: 0.7
+  angular_speed_range: [0.0, 30.0]
+
+physics:
+  gravity: [0.0, 0.0, -9.81]
+  steps_per_second: 240
+  substeps_per_frame: 5
+  solver_iterations: 20
+  split_impulse: true
+  collision_shape: CONVEX_HULL
+  collision_margin: 0.0001
+  restitution_range: [0.1, 0.6]
+  friction_range: [0.3, 0.9]
+  use_deactivation: true
+  set_rigidbody_plane: false
+  mass: 1.0
+
+environment:
+  ground_size: 10.0
+  walls:
+    enabled: true
+    size: [6.0, 6.0]
+    height: 2.0

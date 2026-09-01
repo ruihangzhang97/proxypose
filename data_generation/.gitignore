@@ -1,0 +1,10 @@
+external_data/
+out/
+output/
+
+# User-supplied asset library (large, not part of the release)
+data/objects/*
+!data/objects/.gitkeep
+
+.vscode/
+__pycache__
