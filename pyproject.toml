@@ -23,6 +23,7 @@ dependencies = [
     "scipy",
     "huggingface_hub",
     "gradio",
+    "trimesh",
     # pytorch3d must be installed separately (CUDA-version dependent).
     # See: https://github.com/facebookresearch/pytorch3d/blob/main/INSTALL.md
 ]
@@ -32,7 +33,8 @@ proxypose-infer    = "inference.full_inference:main"
 proxypose-annotate = "inference.annotation.annotate_prompt:main"
 proxypose-eval     = "inference.evaluate_all:main"
 proxypose-track    = "inference.track_proxy:main"
+proxypose-metrics  = "evaluation.evaluate_slam:main"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["inference*"]
+include = ["inference*", "evaluation*"]

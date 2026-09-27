@@ -101,13 +101,31 @@ To use the 1.3B model instead of the default 14B model, add `--gen_config config
 
 ---
 
+## 📊 Evaluation
+
+Benchmark windows (`evaluation/benchmarks/`), preprocessing and metrics used in the paper. Benchmarks are expected in a uniform format (see `evaluation/reformat_ho3d.py`).
+
+```bash
+# Write evaluation windows and prompts into each scene
+python -m evaluation.write_frame_meta --filter_json evaluation/benchmarks/ho3d/w1_f49.json --uniform_root <uniform_root>
+python -m evaluation.sample_prompts --benchmark_path <uniform_root>
+
+# Run ProxyPose, then compute metrics
+proxypose-eval --benchmark_path <uniform_root> --output_path output/benchmark
+bash evaluation/run_eval.sh <uniform_root> output/benchmark/ours_results_attempt_01.json ours
+```
+
+To evaluate your own method, write a JSON list of `{"scene_name", "obj_id", "frame_idx", "pose_4x4"}` entries, with `frame_idx` relative to the window's anchor frame (0–48).
+
+---
+
 ## 📖 Citation
 
 ```bibtex
-@article{zhang2026proxypose,
+@inproceedings{zhang2026proxypose,
   title={ProxyPose: 6-DoF Pose Tracking via Video-to-Video Translation},
   author={Ruihang Zhang and Felix Taubner and Pooja Ravi and Kiriakos N. Kutulakos and David B. Lindell},
-  journal={arXiv preprint arXiv:2607.06555},
+  booktitle={Advances in Neural Information Processing Systems (NeurIPS)},
   year={2026}
 }
 ```

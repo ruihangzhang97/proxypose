@@ -1,0 +1,180 @@
+{
+  "dataset": "ycbineoat",
+  "window_size": 49,
+  "stride": 1,
+  "top_n_per_scene": 1,
+  "n_scenes": 9,
+  "scenes": [
+    {
+      "scene_id": 0,
+      "n_keyframes": 663,
+      "reference_obj_id": 12,
+      "top_windows": [
+        {
+          "anchor_frame": 113,
+          "end_frame": 161,
+          "rot_delta_deg": 56.939,
+          "trans_delta_m": 0.0937,
+          "mean_keyframe_step_deg": 2.027,
+          "max_keyframe_step_deg": 9.235,
+          "n_shared_objs": 1,
+          "shared_obj_ids": [
+            12
+          ]
+        }
+      ]
+    },
+    {
+      "scene_id": 1,
+      "n_keyframes": 441,
+      "reference_obj_id": 12,
+      "top_windows": [
+        {
+          "anchor_frame": 265,
+          "end_frame": 313,
+          "rot_delta_deg": 59.014,
+          "trans_delta_m": 0.1931,
+          "mean_keyframe_step_deg": 2.628,
+          "max_keyframe_step_deg": 8.02,
+          "n_shared_objs": 1,
+          "shared_obj_ids": [
+            12
+          ]
+        }
+      ]
+    },
+    {
+      "scene_id": 2,
+      "n_keyframes": 375,
+      "reference_obj_id": 2,
+      "top_windows": [
+        {
+          "anchor_frame": 191,
+          "end_frame": 239,
+          "rot_delta_deg": 82.208,
+          "trans_delta_m": 0.511,
+          "mean_keyframe_step_deg": 2.809,
+          "max_keyframe_step_deg": 7.397,
+          "n_shared_objs": 1,
+          "shared_obj_ids": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "scene_id": 3,
+      "n_keyframes": 1327,
+      "reference_obj_id": 2,
+      "top_windows": [
+        {
+          "anchor_frame": 1198,
+          "end_frame": 1246,
+          "rot_delta_deg": 43.558,
+          "trans_delta_m": 0.1105,
+          "mean_keyframe_step_deg": 1.952,
+          "max_keyframe_step_deg": 6.31,
+          "n_shared_objs": 1,
+          "shared_obj_ids": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "scene_id": 4,
+      "n_keyframes": 737,
+      "reference_obj_id": 5,
+      "top_windows": [
+        {
+          "anchor_frame": 539,
+          "end_frame": 587,
+          "rot_delta_deg": 94.145,
+          "trans_delta_m": 0.1307,
+          "mean_keyframe_step_deg": 3.731,
+          "max_keyframe_step_deg": 8.989,
+          "n_shared_objs": 1,
+          "shared_obj_ids": [
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "scene_id": 5,
+      "n_keyframes": 689,
+      "reference_obj_id": 5,
+      "top_windows": [
+        {
+          "anchor_frame": 487,
+          "end_frame": 535,
+          "rot_delta_deg": 111.039,
+          "trans_delta_m": 0.0995,
+          "mean_keyframe_step_deg": 3.121,
+          "max_keyframe_step_deg": 9.18,
+          "n_shared_objs": 1,
+          "shared_obj_ids": [
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "scene_id": 6,
+      "n_keyframes": 907,
+      "reference_obj_id": 3,
+      "top_windows": [
+        {
+          "anchor_frame": 208,
+          "end_frame": 256,
+          "rot_delta_deg": 146.744,
+          "trans_delta_m": 0.5139,
+          "mean_keyframe_step_deg": 3.594,
+          "max_keyframe_step_deg": 8.385,
+          "n_shared_objs": 1,
+          "shared_obj_ids": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "scene_id": 7,
+      "n_keyframes": 1002,
+      "reference_obj_id": 3,
+      "top_windows": [
+        {
+          "anchor_frame": 349,
+          "end_frame": 397,
+          "rot_delta_deg": 36.44,
+          "trans_delta_m": 0.0171,
+          "mean_keyframe_step_deg": 1.41,
+          "max_keyframe_step_deg": 7.055,
+          "n_shared_objs": 1,
+          "shared_obj_ids": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "scene_id": 8,
+      "n_keyframes": 1308,
+      "reference_obj_id": 4,
+      "top_windows": [
+        {
+          "anchor_frame": 756,
+          "end_frame": 804,
+          "rot_delta_deg": 42.639,
+          "trans_delta_m": 0.0385,
+          "mean_keyframe_step_deg": 2.642,
+          "max_keyframe_step_deg": 8.481,
+          "n_shared_objs": 1,
+          "shared_obj_ids": [
+            4
+          ]
+        }
+      ]
+    }
+  ]
+}

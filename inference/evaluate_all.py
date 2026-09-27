@@ -231,7 +231,14 @@ def main():
 
         mask_files = sorted((seq / "mask").glob("*_mask.png"))
         mask       = cv2.imread(str(mask_files[start_id]), cv2.IMREAD_UNCHANGED)
-        prompt     = mask_to_prompt(mask)
+
+        # Use the benchmark prompt (evaluation/sample_prompts.py) if present, else the mask centroid.
+        prompt_meta_path = seq / "prompt_meta.json"
+        if prompt_meta_path.is_file():
+            prompt_meta = json.loads(prompt_meta_path.read_text())
+            prompt = {"type": "point", "coordinates": tuple(prompt_meta["pixel_coordinates"][0])}
+        else:
+            prompt = mask_to_prompt(mask)
         crop_box   = get_square_crop_prompt(prompt["coordinates"], resolution=mask.shape[:2])
 
         scene_meta           = json.loads((seq / "scene_meta.json").read_text())
@@ -285,7 +292,7 @@ def main():
                     "dataset":       scene_meta["dataset"],
                     "obj_id":        frame_meta["reference_obj_id"],
                     "object_class":  scene_object_meta["class_name"],
-                    "frame_idx":     start_id + frame_id,
+                    "frame_idx":     frame_id,  # relative to the window anchor
                     "pose_4x4":      T.tolist(),
                     "time_sec":      0.0,
                 })
